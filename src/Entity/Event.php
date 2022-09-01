@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\EventRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
 class Event
@@ -15,21 +17,27 @@ class Event
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank, Assert\Length(min: 2)]
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\LessThanOrEqual(10), Assert\GreaterThanOrEqual(50)]
     private ?int $price = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $created_at = null;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\NotBlank]
+    private ?\DateTimeInterface $created = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\NotBlank, Assert\DateTime, Assert\GreaterThan('today')]
     private ?\DateTimeInterface $start = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Assert\NotBlank, Assert\DateTime, Assert\GreaterThan('$start')]
     private ?\DateTimeInterface $end = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -76,14 +84,14 @@ class Event
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreated(): ?\DateTimeInterface
     {
-        return $this->created_at;
+        return $this->created;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setCreated(\DateTimeInterface $created): self
     {
-        $this->created_at = $created_at;
+        $this->created = $created;
 
         return $this;
     }
