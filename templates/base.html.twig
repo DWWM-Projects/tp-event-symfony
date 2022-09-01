@@ -17,9 +17,12 @@
             {% block header %}
                 <div class="w-full flex flex-row justify-between items-center bg-blue-400 text-white p-5">
                     <h1 class="text-5xl ml-6">Event time</h1>
-                    <ul class="flex-row gap-6 text-3xl mr-6">
+                    <ul class="flex flex-row gap-6 text-3xl mr-6">
                         <li class="hover:text-blue-800 duration-500 rounded-lg p-1 {{ app.request.get('_route') == 'home' ? 'active' }}">
                             <a href="{{ path('home') }}">Accueil</a>
+                        </li>
+                        <li class="hover:text-blue-800 duration-500 rounded-lg p-1 {{ app.request.get('_route') == 'event' ? 'active' }}">
+                            <a href="{{ path('event') }}">Evènements</a>
                         </li>
                     </ul>
                 </div>
