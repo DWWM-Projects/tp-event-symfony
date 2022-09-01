@@ -27,17 +27,17 @@ class AppFixtures extends Fixture
         $event->setCreated($time1);
         $event->setStart($time2);
         $event->setEnd($time3);
-        $event->setImage('null');
+        $event->setImage('alborosie.jpg');
         $manager->persist($event);
 
         $event = new Event();
-        $event->setName('Festival de l\'été');
+        $event->setName('Les feux de l\'été');
         $event->setDescription('Mickey3D, Pierpoljak, Vianney, Bob Sinclar');
         $event->setPrice(45);
         $event->setCreated($time4);
         $event->setStart($time5);
         $event->setEnd($time6);
-        $event->setImage('null');
+        $event->setImage('lesfeuxdelete.jpg');
         $manager->persist($event);
 
         $manager->flush();
