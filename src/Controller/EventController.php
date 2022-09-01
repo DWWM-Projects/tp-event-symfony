@@ -19,5 +19,19 @@ class EventController extends AbstractController
         ]);
     }
 
+    #[Route('Event/{id}', name: 'event_detail')]
+    public function show(EventRepository $repository, $id)
+    {
+        $event = $repository->find($id);
+
+        if (!$event) {
+            throw $this->createNotFoundException('Cet évènement n\'existe pas.');
+        }
+
+        return $this->render('event/show.html.twig', [
+            'event' => $event,
+        ]);
+    }
+
     
 }

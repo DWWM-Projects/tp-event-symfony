@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evènements - Event Time{% endblock %}
+
+{% block header %} {{ parent() }} {% endblock %}
+
+{% block body %}
+    <h1 class="text-center text-5xl my-6">{{ event.name }}</h1>
+
+
+    <div class="w-2/4 mx-auto border rounded-lg text-center p-2 my-6">
+        <img class="w-full mx-auto" src="img/{{ event.image }}">
+        <p class="text-2xl">Entrée: {{ event.price }} €</p>
+        <p class="w-full text-xl">{{ event.description }}</p>
+        {# <p class="text-2xl">Début: {{ event.start }}</p>
+        <p class="text-2xl">Fin: {{ event.end }}</p> #}
+        {# <br>
+        <p class="text-2xl">Créé le: {{ event.created }}</p> #}
+
+    </div>
+            
+{% endblock %}
+
+{% block footer %} {{ parent() }} {% endblock %}

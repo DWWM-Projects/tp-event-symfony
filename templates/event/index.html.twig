@@ -19,7 +19,7 @@
                 {# <br>
                 <p class="text-2xl">Créé le: {{ event.created }}</p> #}
                 <div class="w-1/5 mx-auto text-center my-4">
-                    <a class="bg-blue-300 hover:bg-blue-600 duration-500 rounded-lg text-center text-white p-2 cursor-pointer">Voir</a>
+                    <a href="{{ path('event_detail', { id: event.id }) }}" class="bg-blue-300 hover:bg-blue-600 duration-500 rounded-lg text-center text-white p-2 cursor-pointer">Voir</a>
                 </div>
             </div>
             
