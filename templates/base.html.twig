@@ -11,11 +11,31 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+        <body>
+
+            {% block header %}
+                <div class="w-full flex flex-row justify-between items-center bg-blue-400 text-white p-5">
+                    <h1 class="text-5xl ml-6">Event time</h1>
+                    <ul class="flex-row gap-6 text-3xl mr-6">
+                        <li class="hover:text-blue-800 duration-500">
+                            <a href="">Accueil</a>
+                        </li>
+                    </ul>
+                </div>
+            {% endblock %}
+
+            {% block body %}{% endblock %}
+
+            {% block footer %}
+                <div class="w-full flex justify-center items-center bg-blue-400 p-5">
+                    <p class="text-center text-xl text-white">Event Time - Tous droits réservés.</p>
+                </div>
+            {% endblock %}
+        </body>
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+
 </html>
