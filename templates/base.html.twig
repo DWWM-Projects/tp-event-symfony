@@ -8,6 +8,7 @@
 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
@@ -17,8 +18,8 @@
                 <div class="w-full flex flex-row justify-between items-center bg-blue-400 text-white p-5">
                     <h1 class="text-5xl ml-6">Event time</h1>
                     <ul class="flex-row gap-6 text-3xl mr-6">
-                        <li class="hover:text-blue-800 duration-500">
-                            <a href="">Accueil</a>
+                        <li class="hover:text-blue-800 duration-500 rounded-lg p-1 {{ app.request.get('_route') == 'home' ? 'active' }}">
+                            <a href="{{ path('home') }}">Accueil</a>
                         </li>
                     </ul>
                 </div>
