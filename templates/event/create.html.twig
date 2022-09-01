@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création - Event Time{% endblock %}
+
+{% block header %} {{ parent() }} {% endblock %}
+
+{% block body %}
+    <h1 class="text-center text-5xl my-6">Création d'un évènement</h1>
+    
+    <div class="w-3/5 mx-auto">
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+            <button>Créer</button>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+
+{% block footer %} {{ parent() }} {% endblock %}

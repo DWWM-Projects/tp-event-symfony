@@ -22,7 +22,10 @@
                             <a href="{{ path('home') }}">Accueil</a>
                         </li>
                         <li class="hover:text-blue-800 duration-500 rounded-lg p-1 {{ app.request.get('_route') == 'event' ? 'active' }}">
-                            <a href="{{ path('event') }}">Evènements</a>
+                            <a href="{{ path('event') }}">Évènements</a>
+                        </li>
+                        <li class="hover:text-blue-800 duration-500 rounded-lg p-1 {{ app.request.get('_route') == 'event_create' ? 'active' }}">
+                            <a href="{{ path('event_create') }}">Formulaire d'évènements</a>
                         </li>
                     </ul>
                 </div>
