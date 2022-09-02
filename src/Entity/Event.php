@@ -25,7 +25,7 @@ class Event
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
-    #[Assert\LessThanOrEqual(10), Assert\GreaterThanOrEqual(50)]
+    #[Assert\GreaterThanOrEqual(10), Assert\LessThanOrEqual(50)]
     private ?int $price = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -33,11 +33,11 @@ class Event
     private ?\DateTimeInterface $created = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\NotBlank, Assert\DateTime, Assert\GreaterThan('today')]
+    #[Assert\NotBlank]
     private ?\DateTimeInterface $start = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Assert\NotBlank, Assert\DateTime, Assert\GreaterThan('$start')]
+    #[Assert\NotBlank]
     private ?\DateTimeInterface $end = null;
 
     #[ORM\Column(length: 255, nullable: true)]
