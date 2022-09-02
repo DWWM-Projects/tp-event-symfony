@@ -8,8 +8,8 @@
     <h1 class="text-center text-5xl my-6">{{ event.name }}</h1>
 
 
-    <div class="w-2/4 mx-auto border rounded-lg text-center p-2 my-6">
-        <img class="w-full mx-auto" src="img/{{ event.image }}">
+    <div class="w-1/4 mx-auto border rounded-lg text-center p-2 my-6">
+        <img class="w-full mx-auto" src="{{ asset('img/' ~  event.image ) }}">
         <p class="text-2xl">Entrée: {{ event.price }} €</p>
         <p class="w-full text-xl">{{ event.description }}</p>
         {# <p class="text-2xl">Début: {{ event.start }}</p>
